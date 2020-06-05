@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "H/xK1AvfXp3HqPeD8PXD1x8CHMJjQUzufmZFTbPRhLKdRxVAOcalxbTr8spDhNSSphNfL3GvR+SkbH690c8mDg==",
+  "dgSpecHash": "gDxzRRdB9WQh565dduKpb/45hT+NtXbm/6ubH0q0JKbQQ6vDC+EbS/vM7sZYco365I4lFgFQ1igU8ZxZ4Fsiyw==",
   "success": true,
   "projectFilePath": "C:\\Users\\niro_\\Desktop\\Personal Git\\MicroRabbitTakeawayNEW\\MicroRabbitTakeaway\\MicroRabbitTakeaway.Domain.Core\\MicroRabbitTakeaway.Domain.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\niro_\\.nuget\\packages\\mediatr\\8.0.1\\mediatr.8.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
