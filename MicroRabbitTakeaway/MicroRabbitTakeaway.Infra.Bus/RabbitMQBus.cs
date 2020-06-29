@@ -142,6 +142,8 @@ namespace MicroRabbitTakeaway.Infra.Bus
 
                     var concreteType = typeof(IEventHandler<>).MakeGenericType(eventType);
 
+                    //This line below will do the work to route to the right micro-services
+
                     await (Task) concreteType.GetMethod("Handle").Invoke(handler, new object[] {@event});
                 }
             }
