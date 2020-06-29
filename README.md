@@ -1,2 +1,2 @@
 # MicroRabbitTakeaway
-Takeaway service with a micro service infrastructure and RabbitMQ messaging
+Micro service infrastructure and RabbitMQ messaging
