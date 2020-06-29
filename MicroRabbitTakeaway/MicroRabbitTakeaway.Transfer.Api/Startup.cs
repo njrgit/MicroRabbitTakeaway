@@ -1,15 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using MediatR;
+using MicroRabbitTakeaway.Domain.Core.Bus;
+using MicroRabbitTakeaway.Infra.IoC;
+using MicroRabbitTakeaway.Transfer.Data.Context;
+using MicroRabbitTakeaway.Transfer.Domain.EventHandlers;
+using MicroRabbitTakeaway.Transfer.Domain.Events;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 
 namespace MicroRabbitTakeaway.Transfer.Api
 {
@@ -25,7 +26,24 @@ namespace MicroRabbitTakeaway.Transfer.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<TransferDbContext>(opts =>
+            {
+                opts.UseSqlServer(Configuration.GetConnectionString("TransferDbConnection"));
+            });
+
             services.AddControllers();
+
+            services.AddSwaggerGen(c =>
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Transfer Microservice", Version = "v1" }));
+
+            services.AddMediatR(typeof(Startup));
+
+            RegisterServices(services);
+        }
+
+        private void RegisterServices(IServiceCollection services)
+        {
+            DependencyContainer.RegisterServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,6 +56,9 @@ namespace MicroRabbitTakeaway.Transfer.Api
 
             app.UseHttpsRedirection();
 
+            app.UseSwagger();
+            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Transfer Microservice V1"); });
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -46,6 +67,15 @@ namespace MicroRabbitTakeaway.Transfer.Api
             {
                 endpoints.MapControllers();
             });
+
+            ConfigureEventBus(app);
+        }
+
+        private void ConfigureEventBus(IApplicationBuilder app)
+        {
+            var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
+
+            eventBus.Subscribe<TransferCreatedEvent,TransferEventHandler>();
         }
     }
 }
