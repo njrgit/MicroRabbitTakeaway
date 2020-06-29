@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitTakeaway.Domain.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitTakeaway.Infra.Bus", "MicroRabbitTakeaway.Infra.Bus\MicroRabbitTakeaway.Infra.Bus.csproj", "{3B3D2A36-46DA-4FAD-869E-A4CE2EC84949}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbitTakeaway.Infra.IoC", "MicroRabbitTakeaway.Infra.IoC\MicroRabbitTakeaway.Infra.IoC.csproj", "{66385069-D9F5-434F-9DA8-D47C04B2DD13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitTakeaway.Infra.IoC", "MicroRabbitTakeaway.Infra.IoC\MicroRabbitTakeaway.Infra.IoC.csproj", "{66385069-D9F5-434F-9DA8-D47C04B2DD13}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Banking", "Banking", "{5144004E-0ABE-482D-AFD8-A7344544B64D}"
 EndProject
@@ -29,13 +29,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{AC9ADF20-2B99-49DA-8B34-6D06F1E11A7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbitTakeaway.Banking.Api", "MicroRabbitTakeaway.Banking.Api\MicroRabbitTakeaway.Banking.Api.csproj", "{2F8A8657-CF9E-4B77-9ABB-216AC6F75538}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitTakeaway.Banking.Api", "MicroRabbitTakeaway.Banking.Api\MicroRabbitTakeaway.Banking.Api.csproj", "{2F8A8657-CF9E-4B77-9ABB-216AC6F75538}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbitTakeaway.Banking.Application", "MicroRabbitTakeaway.Banking.Application\MicroRabbitTakeaway.Banking.Application.csproj", "{D869F792-F65F-4536-8ADD-55282075D775}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitTakeaway.Banking.Application", "MicroRabbitTakeaway.Banking.Application\MicroRabbitTakeaway.Banking.Application.csproj", "{D869F792-F65F-4536-8ADD-55282075D775}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbitTakeaway.Banking.Data", "MicroRabbitTakeaway.Banking.Data\MicroRabbitTakeaway.Banking.Data.csproj", "{6D1CE740-CEDA-45B9-B0C2-9EC029D3A703}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitTakeaway.Banking.Data", "MicroRabbitTakeaway.Banking.Data\MicroRabbitTakeaway.Banking.Data.csproj", "{6D1CE740-CEDA-45B9-B0C2-9EC029D3A703}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbitTakeaway.Banking.Domain", "MicroRabbitTakeaway.Banking.Domain\MicroRabbitTakeaway.Banking.Domain.csproj", "{2A2972CC-F178-4D29-BFE2-32A99BF1CAB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitTakeaway.Banking.Domain", "MicroRabbitTakeaway.Banking.Domain\MicroRabbitTakeaway.Banking.Domain.csproj", "{2A2972CC-F178-4D29-BFE2-32A99BF1CAB1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transfer", "Transfer", "{4C7AED10-3635-4CE5-9830-210C5D63D097}"
 EndProject
@@ -47,13 +47,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{641B1A05-7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{D5E56B15-29DD-406F-86B4-752D5DB60977}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbitTakeaway.Transfer.Api", "MicroRabbitTakeaway.Transfer.Api\MicroRabbitTakeaway.Transfer.Api.csproj", "{E34A9986-EA83-4CBC-830F-69605AC24B28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitTakeaway.Transfer.Api", "MicroRabbitTakeaway.Transfer.Api\MicroRabbitTakeaway.Transfer.Api.csproj", "{E34A9986-EA83-4CBC-830F-69605AC24B28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbitTakeaway.Transfer.Application", "MicroRabbitTakeaway.Transfer.Application\MicroRabbitTakeaway.Transfer.Application.csproj", "{F8C08FDA-C341-47BE-83C0-1965805FC37E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitTakeaway.Transfer.Application", "MicroRabbitTakeaway.Transfer.Application\MicroRabbitTakeaway.Transfer.Application.csproj", "{F8C08FDA-C341-47BE-83C0-1965805FC37E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbitTakeaway.Transfer.Data", "MicroRabbitTakeaway.Transfer.Data\MicroRabbitTakeaway.Transfer.Data.csproj", "{E43512CF-2494-4032-BBD9-FDB630ED7D21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitTakeaway.Transfer.Data", "MicroRabbitTakeaway.Transfer.Data\MicroRabbitTakeaway.Transfer.Data.csproj", "{E43512CF-2494-4032-BBD9-FDB630ED7D21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbitTakeaway.Transfer.Domain", "MicroRabbitTakeaway.Transfer.Domain\MicroRabbitTakeaway.Transfer.Domain.csproj", "{29E7BEC7-DD6E-4491-A246-858FACA785F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitTakeaway.Transfer.Domain", "MicroRabbitTakeaway.Transfer.Domain\MicroRabbitTakeaway.Transfer.Domain.csproj", "{29E7BEC7-DD6E-4491-A246-858FACA785F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.MVC", "MicroRabbit.MVC\MicroRabbit.MVC.csproj", "{D10F58EE-DDC5-4E08-8E8A-D1B0243CD969}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,10 @@ Global
 		{29E7BEC7-DD6E-4491-A246-858FACA785F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29E7BEC7-DD6E-4491-A246-858FACA785F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29E7BEC7-DD6E-4491-A246-858FACA785F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D10F58EE-DDC5-4E08-8E8A-D1B0243CD969}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D10F58EE-DDC5-4E08-8E8A-D1B0243CD969}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D10F58EE-DDC5-4E08-8E8A-D1B0243CD969}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D10F58EE-DDC5-4E08-8E8A-D1B0243CD969}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -131,6 +137,7 @@ Global
 		{F8C08FDA-C341-47BE-83C0-1965805FC37E} = {36CBAAD8-3F77-412A-BAEB-0433B81E5C6B}
 		{E43512CF-2494-4032-BBD9-FDB630ED7D21} = {641B1A05-74D6-4367-9A2C-A2CA2E6E41AF}
 		{29E7BEC7-DD6E-4491-A246-858FACA785F4} = {D5E56B15-29DD-406F-86B4-752D5DB60977}
+		{D10F58EE-DDC5-4E08-8E8A-D1B0243CD969} = {FECA6461-B16A-4FE3-B06E-9F74336D494A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71AD88E3-C5F7-4EC5-9EC7-F50DA7AAF4F8}
