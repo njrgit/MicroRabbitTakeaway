@@ -1,16 +1,16 @@
-﻿using System;
+﻿using MediatR;
+using MicroRabbitTakeaway.Domain.Core.Bus;
+using MicroRabbitTakeaway.Domain.Core.Commands;
+using MicroRabbitTakeaway.Domain.Core.Events;
+using Newtonsoft.Json;
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MediatR;
-using MicroRabbitTakeaway.Domain.Core.Bus;
-using MicroRabbitTakeaway.Domain.Core.Commands;
-using MicroRabbitTakeaway.Domain.Core.Events;
-using Microsoft.VisualBasic;
-using Newtonsoft.Json;
-using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MicroRabbitTakeaway.Infra.Bus
 {
@@ -19,12 +19,14 @@ namespace MicroRabbitTakeaway.Infra.Bus
         private readonly IMediator _mediator;
         private readonly Dictionary<string, List<Type>> _handlers;
         private readonly List<Type> _eventTypes;
+        private readonly IServiceScopeFactory _serviceScopeFactory;
 
-        public RabbitMQBus(IMediator mediator)
+        public RabbitMQBus(IMediator mediator, IServiceScopeFactory serviceScopeFactory)
         {
             _mediator = mediator;
             _handlers = new Dictionary<string, List<Type>>();
             _eventTypes = new List<Type>();
+            _serviceScopeFactory = serviceScopeFactory;
         }
 
         public Task SendCommand<T>(T command) where T : Command
@@ -129,22 +131,27 @@ namespace MicroRabbitTakeaway.Infra.Bus
 
                 foreach (var subscription in subscriptions)
                 {
-                    var handler = Activator.CreateInstance(subscription);
-
-                    if (handler == null)
+                    using (var scope  = _serviceScopeFactory.CreateScope())
                     {
-                        continue;
+
+                        var handler = scope.ServiceProvider.GetService(subscription);
+
+                        if (handler == null)
+                        {
+                            continue;
+                        }
+
+                        var eventType = _eventTypes.SingleOrDefault(t => t.Name == eventName);
+
+                        var @event = JsonConvert.DeserializeObject(message, eventType);
+
+                        var concreteType = typeof(IEventHandler<>).MakeGenericType(eventType);
+
+                        //This line below will do the work to route to the right micro-services
+
+                        await (Task)concreteType.GetMethod("Handle").Invoke(handler, new object[] { @event });
                     }
 
-                    var eventType = _eventTypes.SingleOrDefault(t => t.Name == eventName);
-
-                    var @event = JsonConvert.DeserializeObject(message, eventType);
-
-                    var concreteType = typeof(IEventHandler<>).MakeGenericType(eventType);
-
-                    //This line below will do the work to route to the right micro-services
-
-                    await (Task) concreteType.GetMethod("Handle").Invoke(handler, new object[] {@event});
                 }
             }
         }

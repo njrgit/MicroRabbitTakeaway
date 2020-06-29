@@ -7,5 +7,7 @@ namespace MicroRabbitTakeaway.Transfer.Domain.Interfaces
     {
         IEnumerable<TransferLog> GetTransferLogs();
 
+        void Add(TransferLog transferLog);
+
     }
 }
