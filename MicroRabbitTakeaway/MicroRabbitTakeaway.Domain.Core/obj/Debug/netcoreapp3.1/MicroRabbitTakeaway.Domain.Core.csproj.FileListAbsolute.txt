@@ -6,3 +6,4 @@ C:\Users\niro_\Desktop\Personal Git\MicroRabbitTakeawayNEW\MicroRabbitTakeaway\M
 C:\Users\niro_\Desktop\Personal Git\MicroRabbitTakeawayNEW\MicroRabbitTakeaway\MicroRabbitTakeaway.Domain.Core\obj\Debug\netcoreapp3.1\MicroRabbitTakeaway.Domain.Core.csproj.CoreCompileInputs.cache
 C:\Users\niro_\Desktop\Personal Git\MicroRabbitTakeawayNEW\MicroRabbitTakeaway\MicroRabbitTakeaway.Domain.Core\obj\Debug\netcoreapp3.1\MicroRabbitTakeaway.Domain.Core.dll
 C:\Users\niro_\Desktop\Personal Git\MicroRabbitTakeawayNEW\MicroRabbitTakeaway\MicroRabbitTakeaway.Domain.Core\obj\Debug\netcoreapp3.1\MicroRabbitTakeaway.Domain.Core.pdb
+C:\Users\niro_\Desktop\Personal Git\MicroRabbitTakeawayNEW\MicroRabbitTakeaway\MicroRabbitTakeaway.Domain.Core\obj\Debug\netcoreapp3.1\MicroRabbitTakeaway.Domain.Core.csprojAssemblyReference.cache
